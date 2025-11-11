@@ -11,24 +11,32 @@ import { Transaction } from "./components/Transaction";
 function App() {
   return (
     <div className="flex h-screen overflow-hidden bg-white">
-      {/* Sidebar - Fixed */}
-      <aside className="w-[263px] flex-shrink-0">
+      {/* {/* Sidebar - Fixed *- add responsiveness/} */}
+      <aside className=" hidden md:flex md:w-64 lg:w-[263px] flex-shrink-0 bg-white border-r border-gray-200 md:static fixed inset-y-0 z-50">
         <Sidebar />
       </aside>
 
       {/* Main Content Area */}
       <div className="flex flex-col flex-1 min-w-0 overflow-hidden">
         {/* Header - Fixed at top */}
-        <header className="flex-shrink-0 px-8 py-6 border-b border-gray-200">
+        <header className=" flex-shrink-0 px-4 sm:px-6 md:px-8 py-4 sm:py-5 md:py-6border-b border-gray-200
+            bg-white sticky top-0 z-40">
           <Header />
         </header>
 
  C       {/* Scrollable Content */}
-        <main className="flex-1 px-8 py-8 overflow-x-hidden overflow-y-auto">
+        <main className="flex-1 px-4 sm:px-6 md:px-8 py-6 sm:py-8 overflow-x-hidden overflow-y-auto">
+
           {/* Top Section - Crypto Cards and Chart */}
-          <div className="grid items-start grid-cols-1 gap-6 mb-6 lg:grid-cols-2">
+          <div className="grid gap-6 mb-6
+              grid-cols-1
+              lg:grid-cols-2
+              items-start">
             {/* Left: 2x2 Grid of Crypto Cards */}
-            <div className="grid grid-cols-1 gap-6 lg:col-span-1 md:grid-cols-2 auto-rows-fr">
+            <div className="  grid gap-6
+                grid-cols-1 sm:grid-cols-2
+                lg:col-span-1
+                auto-rows-fr">
               <CardContent4 />
               <CardContent3 />
               <CardContent2/>
@@ -42,7 +50,11 @@ function App() {
           </div>
 
           {/* Bottom Section - Live Market and Transactions */}
-          <div className="grid items-start grid-cols-1 gap-6 lg:grid-cols-3">
+          <div className="grid gap-6
+              grid-cols-1
+              lg:grid-cols-3
+              items-start
+            ">
             {/* Live Market - Takes 2 columns */}
             <div className="h-full lg:col-span-2">
               <LiveMarket />
